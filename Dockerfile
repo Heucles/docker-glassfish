@@ -27,6 +27,7 @@ RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     mkdir -p ${GLASSFISH_DOMAINS_DIR} ${OPENMQ_INSTANCES_DIR} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
     rm -rf ${GLASSFISH_BASE_DIR}/glassfish/domains/domain1 \
+    ${GLASSFISH_BASE_DIR}/glassfish/domains/payaradomain \
     ${GLASSFISH_BASE_DIR}/glassfish/modules/console-updatecenter-plugin.jar \
     ${GLASSFISH_BASE_DIR}/README.txt \
     ${GLASSFISH_BASE_DIR}/bin/*.bat \
