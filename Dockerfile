@@ -19,6 +19,7 @@ ENV GLASSFISH_BASE_DIR=/opt/glassfish \
     OPENMQ_INSTANCES_DIR=/srv/openmq/instances
 
 RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
+    addgroup -S glassfish && \
     curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/payara-4.1.152.1.zip > /tmp/payara-4.1.152.1.zip && \
     unzip -o -q /tmp/payara-4.1.152.1.zip -d /opt && \
     mv /opt/payara41 ${GLASSFISH_BASE_DIR} && \
