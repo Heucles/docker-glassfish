@@ -20,10 +20,10 @@ ENV GLASSFISH_BASE_DIR=/opt/glassfish \
 
 RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
-    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/payara-4.1.152.1.zip > /tmp/payara-4.1.152.1.zip && \
-    unzip -o -q /tmp/payara-4.1.152.1.zip -d /opt && \
+    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
+    unzip -o -q /tmp/payara-4.1.1.162.zip -d /opt && \
     mv /opt/payara41 ${GLASSFISH_BASE_DIR} && \
-    rm /tmp/payara-4.1.152.1.zip && \
+    rm /tmp/payara-4.1.1.162.zip && \
     mkdir -p ${GLASSFISH_DOMAINS_DIR} ${OPENMQ_INSTANCES_DIR} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
     rm -rf ${GLASSFISH_BASE_DIR}/glassfish/domains/domain1 \
