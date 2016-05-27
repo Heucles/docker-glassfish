@@ -31,9 +31,11 @@ RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     ${GLASSFISH_BASE_DIR}/glassfish/modules/console-updatecenter-plugin.jar \
     ${GLASSFISH_BASE_DIR}/glassfish/modules/phonehome-bootstrap.jar \
     ${GLASSFISH_BASE_DIR}/README.txt \
-    ${GLASSFISH_BASE_DIR}/bin/*.bat \
-    ${GLASSFISH_BASE_DIR}/bin/updatetool \
-    ${GLASSFISH_BASE_DIR}/bin/pkg \
+    ${GLASSFISH_BASE_DIR}/bin \
+    ${GLASSFISH_BASE_DIR}/glassfish/bin/*.bat \
+    ${GLASSFISH_BASE_DIR}/glassfish/bin/*.js \
+    ${GLASSFISH_BASE_DIR}/glassfish/config/asenv.bat \
+    ${GLASSFISH_BASE_DIR}/glassfish/legal \
     ${GLASSFISH_BASE_DIR}/mq/bin/*.exe \
     ${GLASSFISH_BASE_DIR}/mq/lib/help \
     ${GLASSFISH_BASE_DIR}/mq/lib/images
