@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM stocksoftware/ruby
+FROM anapsix/alpine-java:jdk7
 MAINTAINER Stock Software
 
 ENV GLASSFISH_BASE_DIR=/opt/glassfish \
