@@ -14,7 +14,7 @@
 FROM anapsix/alpine-java:jdk7
 MAINTAINER Stock Software
 
-ENV GLASSFISH_BASE_DIR=/opt/glassfish \
+ENV GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
     OPENMQ_INSTANCES_DIR=/srv/openmq/instances
 
@@ -22,26 +22,26 @@ RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
     curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
     unzip -o -q /tmp/payara-4.1.1.162.zip -d /opt && \
-    mv /opt/payara41 ${GLASSFISH_BASE_DIR} && \
+    mv /opt/payara41 ${GLASSFISH_HOME} && \
     rm /tmp/payara-4.1.1.162.zip && \
     mkdir -p ${GLASSFISH_DOMAINS_DIR} ${OPENMQ_INSTANCES_DIR} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
-    rm -rf ${GLASSFISH_BASE_DIR}/glassfish/domains/domain1 \
-    ${GLASSFISH_BASE_DIR}/glassfish/domains/payaradomain \
-    ${GLASSFISH_BASE_DIR}/glassfish/modules/console-updatecenter-plugin.jar \
-    ${GLASSFISH_BASE_DIR}/glassfish/modules/phonehome-bootstrap.jar \
-    ${GLASSFISH_BASE_DIR}/README.txt \
-    ${GLASSFISH_BASE_DIR}/bin \
-    ${GLASSFISH_BASE_DIR}/glassfish/bin/*.bat \
-    ${GLASSFISH_BASE_DIR}/glassfish/bin/*.js \
-    ${GLASSFISH_BASE_DIR}/glassfish/config/asenv.bat \
-    ${GLASSFISH_BASE_DIR}/glassfish/legal \
-    ${GLASSFISH_BASE_DIR}/mq/bin/*.exe \
-    ${GLASSFISH_BASE_DIR}/mq/lib/help \
-    ${GLASSFISH_BASE_DIR}/mq/lib/images
+    rm -rf ${GLASSFISH_HOME}/glassfish/domains/domain1 \
+    ${GLASSFISH_HOME}/glassfish/domains/payaradomain \
+    ${GLASSFISH_HOME}/glassfish/modules/console-updatecenter-plugin.jar \
+    ${GLASSFISH_HOME}/glassfish/modules/phonehome-bootstrap.jar \
+    ${GLASSFISH_HOME}/README.txt \
+    ${GLASSFISH_HOME}/bin \
+    ${GLASSFISH_HOME}/glassfish/bin/*.bat \
+    ${GLASSFISH_HOME}/glassfish/bin/*.js \
+    ${GLASSFISH_HOME}/glassfish/config/asenv.bat \
+    ${GLASSFISH_HOME}/glassfish/legal \
+    ${GLASSFISH_HOME}/mq/bin/*.exe \
+    ${GLASSFISH_HOME}/mq/lib/help \
+    ${GLASSFISH_HOME}/mq/lib/images
 
-# Should also delete ${GLASSFISH_BASE_DIR}/javadb but can't until timer database is configured to point at a real database
+# Should also delete ${GLASSFISH_HOME}/javadb but can't until timer database is configured to point at a real database
 
 USER glassfish:glassfish
 
-ENV PATH ${PATH}:${GLASSFISH_BASE_DIR}/glassfish/bin:${GLASSFISH_BASE_DIR}/mq/bin
+ENV PATH ${PATH}:${GLASSFISH_HOME}/glassfish/bin:${GLASSFISH_HOME}/mq/bin
