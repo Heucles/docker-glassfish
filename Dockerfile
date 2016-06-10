@@ -37,6 +37,7 @@ RUN apk update && \
     mv /opt/payara41 ${GLASSFISH_HOME} && \
     rm /tmp/payara-4.1.1.162.zip && \
     mkdir -p ${GLASSFISH_DOMAINS_DIR} ${OPENMQ_INSTANCES_DIR} && \
+    chmod a-w ${GLASSFISH_HOME} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
     rm -rf ${GLASSFISH_HOME}/glassfish/domains/domain1 \
     ${GLASSFISH_HOME}/glassfish/domains/payaradomain \
