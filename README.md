@@ -10,4 +10,3 @@ The image bundles version 4.1.1.162 of the Payara variant of glassfish.
 Example: 
 
     docker run -it --rm stocksoftware/glassfish:latest
-
