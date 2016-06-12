@@ -14,13 +14,6 @@
 FROM anapsix/alpine-java:jdk7
 MAINTAINER Stock Software
 
-ENV BUILD_PACKAGES="bash curl-dev ca-certificates"
-
-RUN apk update && \
-    apk upgrade && \
-    apk add $BUILD_PACKAGES && \
-    rm -rf /var/cache/apk/*
-
 ENV BUILD_PACKAGES="bash curl-dev ca-certificates" \
     GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
