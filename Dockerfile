@@ -14,14 +14,13 @@
 FROM anapsix/alpine-java:jdk7
 MAINTAINER Stock Software
 
-ENV BUILD_PACKAGES="bash curl-dev ca-certificates" \
-    GLASSFISH_HOME=/opt/glassfish \
+ENV GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
     OPENMQ_INSTANCES_DIR=/srv/openmq/instances
 
 RUN apk update && \
     apk upgrade && \
-    apk add $BUILD_PACKAGES && \
+    apk add bash curl-dev ca-certificates && \
     rm -rf /var/cache/apk/* && \
     adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
