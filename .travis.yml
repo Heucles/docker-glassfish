@@ -1,0 +1,14 @@
+sudo: required
+
+language: c
+
+services:
+  - docker
+
+before_install:
+  - docker info
+  - docker build -t stocksoftware/glassfish .
+
+script:
+  - docker run -it --rm stocksoftware/glassfish sh -c '${GLASSFISH_HOME}/glassfish/bin/asadmin --help'
+  - docker run -it --rm stocksoftware/glassfish sh -c '${GLASSFISH_HOME}/mq/bin/imqadmin -h'
