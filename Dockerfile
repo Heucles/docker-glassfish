@@ -24,7 +24,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/* && \
     adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
-    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
+    /usr/bin/curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
     unzip -o -q /tmp/payara-4.1.1.162.zip -d /opt && \
     mv /opt/payara41 ${GLASSFISH_HOME} && \
     rm /tmp/payara-4.1.1.162.zip && \
