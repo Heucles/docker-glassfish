@@ -14,18 +14,18 @@
 FROM anapsix/alpine-java:jdk7
 MAINTAINER Stock Software
 
-RUN apk update && \
-    apk upgrade && \
-    apk add bash curl-dev ca-certificates && \
-    rm -rf /var/cache/apk/*
 
 ENV GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
     OPENMQ_INSTANCES_DIR=/srv/openmq/instances
 
-RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
+RUN apk update && \
+    apk upgrade && \
+    apk add bash curl ca-certificates && \
+    rm -rf /var/cache/apk/* && \
+    adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
-    /usr/bin/curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
+    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
     unzip -o -q /tmp/payara-4.1.1.162.zip -d /opt && \
     mv /opt/payara41 ${GLASSFISH_HOME} && \
     rm /tmp/payara-4.1.1.162.zip && \
