@@ -42,6 +42,7 @@ RUN apk update && \
     ${GLASSFISH_HOME}/glassfish/bin/*.js \
     ${GLASSFISH_HOME}/glassfish/config/asenv.bat \
     ${GLASSFISH_HOME}/glassfish/legal \
+    ${GLASSFISH_HOME}/javadb \
     ${GLASSFISH_HOME}/mq/etc/rc \
     ${GLASSFISH_HOME}/mq/etc/registry \
     ${GLASSFISH_HOME}/mq/etc/xml \
@@ -50,8 +51,6 @@ RUN apk update && \
     ${GLASSFISH_HOME}/mq/bin/*.exe \
     ${GLASSFISH_HOME}/mq/lib/help \
     ${GLASSFISH_HOME}/mq/lib/images
-
-# Should also delete ${GLASSFISH_HOME}/javadb but can't until timer database is configured to point at a real database
 
 USER glassfish:glassfish
 
