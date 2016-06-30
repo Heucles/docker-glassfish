@@ -35,6 +35,20 @@ RUN apk update && \
     chmod a-w ${GLASSFISH_HOME} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
     rm -rf ${GLASSFISH_HOME}/glassfish/domains \
+    ${GLASSFISH_HOME}/glassfish/bin/appclient \
+    ${GLASSFISH_HOME}/glassfish/bin/capture-schema \
+    ${GLASSFISH_HOME}/glassfish/bin/package-appclient \
+    ${GLASSFISH_HOME}/glassfish/bin/startserv \
+    ${GLASSFISH_HOME}/glassfish/bin/wscompile \
+    ${GLASSFISH_HOME}/glassfish/bin/wsgen \
+    ${GLASSFISH_HOME}/glassfish/bin/xjc \
+    ${GLASSFISH_HOME}/glassfish/bin/jspc \
+    ${GLASSFISH_HOME}/glassfish/bin/schemagen \
+    ${GLASSFISH_HOME}/glassfish/bin/stopserv \
+    ${GLASSFISH_HOME}/glassfish/bin/wsdeploy \
+    ${GLASSFISH_HOME}/glassfish/bin/wsimport \
+    ${GLASSFISH_HOME}/glassfish/lib/nadmin \
+    ${GLASSFISH_HOME}/glassfish/lib/nadmin.bat \
     ${GLASSFISH_HOME}/glassfish/domains/payaradomain \
     ${GLASSFISH_HOME}/glassfish/modules/console-updatecenter-plugin.jar \
     ${GLASSFISH_HOME}/glassfish/modules/phonehome-bootstrap.jar \
