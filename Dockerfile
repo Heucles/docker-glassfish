@@ -34,7 +34,7 @@ RUN apk update && \
     mkdir -p ${GLASSFISH_DOMAINS_DIR} ${IMQ_VARHOME} && \
     chmod a-w ${GLASSFISH_HOME} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
-    rm -rf ${GLASSFISH_HOME}/glassfish/domains/domain1 \
+    rm -rf ${GLASSFISH_HOME}/glassfish/domains \
     ${GLASSFISH_HOME}/glassfish/domains/payaradomain \
     ${GLASSFISH_HOME}/glassfish/modules/console-updatecenter-plugin.jar \
     ${GLASSFISH_HOME}/glassfish/modules/phonehome-bootstrap.jar \
