@@ -56,6 +56,7 @@ RUN apk update && \
     ${GLASSFISH_HOME}/glassfish/domains/payaradomain \
     ${GLASSFISH_HOME}/glassfish/modules/console-updatecenter-plugin.jar \
     ${GLASSFISH_HOME}/glassfish/modules/phonehome-bootstrap.jar \
+    ${GLASSFISH_HOME}/glassfish/lib/asadmin/cli-optional.jar \
     ${GLASSFISH_HOME}/README.txt \
     ${GLASSFISH_HOME}/bin \
     ${GLASSFISH_HOME}/glassfish/bin/*.bat \
