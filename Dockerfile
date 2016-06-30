@@ -49,6 +49,10 @@ RUN apk update && \
     ${GLASSFISH_HOME}/glassfish/bin/wsimport \
     ${GLASSFISH_HOME}/glassfish/lib/nadmin \
     ${GLASSFISH_HOME}/glassfish/lib/nadmin.bat \
+    ${GLASSFISH_HOME}/glassfish/lib/package-appclient.xml \
+    ${GLASSFISH_HOME}/glassfish/lib/install/databases \
+    ${GLASSFISH_HOME}/glassfish/lib/install/templates \
+    ${GLASSFISH_HOME}/glassfish/lib/registration \
     ${GLASSFISH_HOME}/glassfish/domains/payaradomain \
     ${GLASSFISH_HOME}/glassfish/modules/console-updatecenter-plugin.jar \
     ${GLASSFISH_HOME}/glassfish/modules/phonehome-bootstrap.jar \
