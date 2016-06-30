@@ -17,7 +17,7 @@ MAINTAINER Stock Software
 
 ENV GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
-    OPENMQ_INSTANCES_DIR=/srv/openmq/instances
+    OPENMQ_VAR_DIR=/srv/openmq
 
 RUN apk update && \
     apk upgrade && \
@@ -29,7 +29,7 @@ RUN apk update && \
     unzip -o -q /tmp/payara-4.1.1.162.zip -d /opt && \
     mv /opt/payara41 ${GLASSFISH_HOME} && \
     rm /tmp/payara-4.1.1.162.zip && \
-    mkdir -p ${GLASSFISH_DOMAINS_DIR} ${OPENMQ_INSTANCES_DIR} && \
+    mkdir -p ${GLASSFISH_DOMAINS_DIR} ${OPENMQ_VAR_DIR} && \
     chmod a-w ${GLASSFISH_HOME} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
     rm -rf ${GLASSFISH_HOME}/glassfish/domains/domain1 \
