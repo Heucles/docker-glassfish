@@ -66,6 +66,7 @@ RUN apk update && \
     ${GLASSFISH_HOME}/javadb \
     ${GLASSFISH_HOME}/mq/etc \
     ${GLASSFISH_HOME}/mq/bin/*.exe \
+    ${GLASSFISH_HOME}/mq/lib/etc/README \
     ${GLASSFISH_HOME}/mq/lib/help \
     ${GLASSFISH_HOME}/mq/lib/images
 
