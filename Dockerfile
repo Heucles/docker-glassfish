@@ -64,7 +64,8 @@ RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     ${GLASSFISH_HOME}/mq/lib/install \
     ${GLASSFISH_HOME}/mq/lib/props/broker/install.properties \
     ${GLASSFISH_HOME}/mq/lib/help \
-    ${GLASSFISH_HOME}/mq/lib/images
+    ${GLASSFISH_HOME}/mq/lib/images && \
+    sed -i  's/^"$imq_javahome\/bin\/java" /"$imq_javahome\/bin\/java" -XX:+PerfDisableSharedMem /' /opt/glassfish/mq/bin/imq*
 
 COPY asadmin /opt/glassfish/glassfish/bin/asadmin
 COPY asenv.conf /opt/glassfish/glassfish/config/asaenv.conf
