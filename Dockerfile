@@ -69,6 +69,7 @@ RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
 COPY asadmin /opt/glassfish/glassfish/bin/asadmin
 COPY asenv.conf /opt/glassfish/glassfish/config/asaenv.conf
 COPY imqenv.conf /opt/glassfish/mq/etc/imqenv.conf
+COPY imqinit /opt/glassfish/mq/lib/imqinit
 
 RUN chmod a+x /opt/glassfish/glassfish/bin/asadmin
 
