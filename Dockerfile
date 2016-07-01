@@ -72,10 +72,12 @@ RUN apk update && \
     ${GLASSFISH_HOME}/mq/lib/help \
     ${GLASSFISH_HOME}/mq/lib/images
 
-USER glassfish:glassfish
-
 COPY asadmin /opt/glassfish/glassfish/bin/asadmin
 COPY asenv.conf /opt/glassfish/glassfish/config/asaenv.conf
 COPY imqenv.conf /opt/glassfish/mq/etc/imqenv.conf
+
+RUN chmod a+x /opt/glassfish/glassfish/bin/asadmin
+
+USER glassfish:glassfish
 
 ENV PATH ${PATH}:${GLASSFISH_HOME}/glassfish/bin:${GLASSFISH_HOME}/mq/bin
