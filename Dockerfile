@@ -74,6 +74,7 @@ RUN apk update && \
 
 USER glassfish:glassfish
 
+COPY asadmin /opt/glassfish/glassfish/bin/asadmin
 COPY asenv.conf /opt/glassfish/glassfish/config/asaenv.conf
 COPY imqenv.conf /opt/glassfish/mq/etc/imqenv.conf
 
