@@ -68,6 +68,7 @@ RUN apk update && \
     ${GLASSFISH_HOME}/mq/bin/*.exe \
     ${GLASSFISH_HOME}/mq/lib/etc/README \
     ${GLASSFISH_HOME}/mq/lib/install \
+    ${GLASSFISH_HOME}/mq/lib/props/broker/install.properties \
     ${GLASSFISH_HOME}/mq/lib/help \
     ${GLASSFISH_HOME}/mq/lib/images
 
