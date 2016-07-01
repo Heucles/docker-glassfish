@@ -74,4 +74,6 @@ RUN apk update && \
 USER glassfish:glassfish
 
 COPY asenv.conf /opt/glassfish/glassfish/config/asaenv.conf
+COPY imqenv.conf /opt/glassfish/mq/etc/imqenv.conf
+
 ENV PATH ${PATH}:${GLASSFISH_HOME}/glassfish/bin:${GLASSFISH_HOME}/mq/bin
