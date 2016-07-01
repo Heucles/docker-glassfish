@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec "${JAVA}" -jar /opt/glassfish/glassfish/lib/client/appserver-cli.jar "$@"
+exec "${JAVA_HOME}/bin/java" -jar /opt/glassfish/glassfish/lib/client/appserver-cli.jar "$@"
