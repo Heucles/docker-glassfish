@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM stocksoftware/java:jdk8
+FROM stocksoftware/java:jdk7
 
 ENV GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
@@ -78,4 +78,3 @@ RUN chmod a+x /opt/glassfish/glassfish/bin/asadmin
 USER glassfish:glassfish
 
 ENV PATH ${PATH}:${GLASSFISH_HOME}/glassfish/bin:${GLASSFISH_HOME}/mq/bin
-
