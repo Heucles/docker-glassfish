@@ -122,7 +122,6 @@ RUN chmod a+x /opt/glassfish/glassfish/bin/asadmin
 USER glassfish:glassfish
 
 ENV PATH ${PATH}:${GLASSFISH_HOME}/glassfish/bin:${GLASSFISH_HOME}/mq/bin
-
 FILE
   end
 
