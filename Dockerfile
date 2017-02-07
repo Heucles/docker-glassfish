@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM stocksoftware/java:jdk7
+FROM stocksoftware/java:jdk8
 
 ENV GLASSFISH_HOME=/opt/glassfish     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains     IMQ_HOME=/opt/glassfish/mq     IMQ_VARHOME=/srv/openmq     IMQ_JAVAHOME=${JAVA_HOME}
 
