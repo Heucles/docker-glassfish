@@ -21,10 +21,10 @@ ENV GLASSFISH_HOME=/opt/glassfish \
 
 RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
-    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara-4.1.1.162.zip && \
-    unzip -o -q /tmp/payara-4.1.1.162.zip -d /opt && \
-    mv /opt/payara41 ${GLASSFISH_HOME} && \
-    rm /tmp/payara-4.1.1.162.zip && \
+    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara.zip && \
+    unzip -o -q /tmp/payara.zip -d /tmp && \
+    mv /tmp/payara41 ${GLASSFISH_HOME} && \
+    rm /tmp/payara.zip && \
     mkdir -p ${GLASSFISH_DOMAINS_DIR} ${IMQ_VARHOME} && \
     chmod a-w ${GLASSFISH_HOME} && \
     chown -R glassfish:glassfish /srv/glassfish /srv/openmq && \
