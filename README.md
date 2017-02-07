@@ -6,7 +6,9 @@
 A minimal docker image designed to run the GlassFish application server.
 The image bundles version 4.1.1.162 of the Payara variant of glassfish.
 
-### Usage
+## Tags
+
+## Usage
 
 Example:
 
