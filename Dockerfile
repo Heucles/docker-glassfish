@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM stocksoftware/java
+FROM stocksoftware/java:jdk8
 
 ENV GLASSFISH_HOME=/opt/glassfish \
     GLASSFISH_DOMAINS_DIR=/srv/glassfish/domains \
@@ -21,7 +21,7 @@ ENV GLASSFISH_HOME=/opt/glassfish \
 
 RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \
     addgroup -S glassfish && \
-    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip > /tmp/payara.zip && \
+    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.164/payara-4.1.1.164.zip > /tmp/payara.zip && \
     unzip -o -q /tmp/payara.zip -d /tmp && \
     mv /tmp/payara41 ${GLASSFISH_HOME} && \
     rm /tmp/payara.zip && \
@@ -78,3 +78,4 @@ RUN chmod a+x /opt/glassfish/glassfish/bin/asadmin
 USER glassfish:glassfish
 
 ENV PATH ${PATH}:${GLASSFISH_HOME}/glassfish/bin:${GLASSFISH_HOME}/mq/bin
+
