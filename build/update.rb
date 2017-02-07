@@ -12,6 +12,10 @@ JAVA_7_VERSION='7'
 JAVA_8_VERSION='8'
 PAYARA_162='4.1.1.162'
 PAYARA_164='4.1.1.164'
+PAYARA_URLS ={
+  PAYARA_162 => 'https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip',
+  PAYARA_164 => 'https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.1.164/payara-4.1.1.164.zip'
+}
 
 VARIANTS = []
 VARIANTS << {:java => JAVA_7_VERSION, :payara => PAYARA_162}
@@ -65,7 +69,7 @@ ENV GLASSFISH_HOME=/opt/glassfish \\
 
 RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \\
     addgroup -S glassfish && \\
-    curl -jksSL https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+#{payara_version}/payara-#{payara_version}.zip > /tmp/payara.zip && \\
+    curl -jksSL #{PAYARA_URLS[payara_version]} > /tmp/payara.zip && \\
     unzip -o -q /tmp/payara.zip -d /tmp && \\
     mv /tmp/payara41 ${GLASSFISH_HOME} && \\
     rm /tmp/payara.zip && \\
