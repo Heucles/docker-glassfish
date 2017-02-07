@@ -7,4 +7,5 @@ CONTRIBUTING.md
 .travis.yml
 .gitattributes
 .gitignore
+build/
 tmp/
