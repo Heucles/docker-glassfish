@@ -12,9 +12,11 @@ JAVA_7_VERSION='7'
 JAVA_8_VERSION='8'
 PAYARA_162='4.1.1.162'
 PAYARA_164='4.1.1.164'
+PAYARA_171='4.1.1.171'
 PAYARA_URLS ={
   PAYARA_162 => 'https://s3-eu-west-1.amazonaws.com/payara.co/Payara+Downloads/Payara+4.1.1.162/payara-4.1.1.162.zip',
-  PAYARA_164 => 'https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.1.164/payara-4.1.1.164.zip'
+  PAYARA_164 => 'https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.1.164/payara-4.1.1.164.zip',
+  PAYARA_171 => 'https://s3-eu-west-1.amazonaws.com/payara.fish/Payara+Downloads/Payara+4.1.1.171.0.1/payara-4.1.1.171.0.1.zip'
 }
 
 VARIANTS = []
@@ -22,8 +24,9 @@ VARIANTS << {:java => JAVA_7_VERSION, :payara => PAYARA_162}
 VARIANTS << {:java => JAVA_8_VERSION, :payara => PAYARA_162}
 VARIANTS << {:java => JAVA_7_VERSION, :payara => PAYARA_164}
 VARIANTS << {:java => JAVA_8_VERSION, :payara => PAYARA_164}
+VARIANTS << {:java => JAVA_8_VERSION, :payara => PAYARA_171}
 
-LATEST_VARIANT = VARIANTS[3]
+LATEST_VARIANT = VARIANTS[4]
 
 def sh(command)
   system(command) || (raise "Error executing #{command} in #{Dir.pwd}")
