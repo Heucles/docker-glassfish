@@ -101,6 +101,7 @@ RUN adduser -D -H -s /bin/bash -h /srv/glassfish -S glassfish && \\
     ${GLASSFISH_HOME}/glassfish/domains/payaradomain \\
     ${GLASSFISH_HOME}/glassfish/modules/console-updatecenter-plugin.jar \\
     ${GLASSFISH_HOME}/glassfish/modules/phonehome-bootstrap.jar \\
+    ${GLASSFISH_HOME}/glassfish/modules/payara-micro-cdi.jar \\
     ${GLASSFISH_HOME}/glassfish/lib/asadmin/cli-optional.jar \\
     ${GLASSFISH_HOME}/README.txt \\
     ${GLASSFISH_HOME}/bin \\
